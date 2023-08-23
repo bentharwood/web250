@@ -1,2 +1,4 @@
 # web250
-class assignments for web-250
+# Web 250 Read me
+
+this is my schoolwork for web 250
