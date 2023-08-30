@@ -5,7 +5,7 @@
     var $icing;
 
     function decorate() {
-      return $this->icing;
+      return "drizzle ". $this->icing;
     }
 
     function consume() {
@@ -26,5 +26,6 @@
 
 
  echo "my first cookie is ".$cookie1->weight. "it is ".$cookie1->color."it has ".$cookie1->icing.".<br>";
+ echo "i will " .$cookie1->decorate().".<br>";
  echo "my second cookie is ".$cookie2->weight."it is ".$cookie2->color."it has ".$cookie2->icing."icing."
 ?>
