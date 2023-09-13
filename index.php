@@ -13,6 +13,10 @@
       <li><a href="asgn-00a\event.php">Event</a></li>
       <li><a href="asgn-00a\fizz-buzz.php">Fizz-buzz</a></li>
       <li><a href="asgn-00a\flip.php">Flip</a></li>
+      <li><a href="asgn-01b\bike challenge">Bike challenge</a></li>
+      <li><a href="asgn-01b\bird challenge">Bird challenge</a></li>
+      <li><a href="asgn-02a-inheritance\challenge-02-inheritence.php">challenge 02 inheritance</a></li>
+      <li><a href="asgn-02a-inheritance\challenge-03-oac.php">challenge 03 oac</a></li>
     </ul>
 
     <h2>asgn-01
