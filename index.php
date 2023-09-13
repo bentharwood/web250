@@ -16,6 +16,7 @@
       <li><a href="asgn-00a\flip.php">Flip</a></li>
       <li><a href="asgn-01b\bike challenge">Bike challenge</a></li>
       <li><a href="asgn-01b\bird challenge">Bird challenge</a></li>
+      <li><a href="asgn-02a-inheritance\challenge-02-inheritence.php">challenge 02</a></li>
     </ul>
   </body>
 
