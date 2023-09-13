@@ -1,30 +1,35 @@
 <?php 
   class computer {
-    var $cpu;
-    var $ram;
-    var $memory;
-    var $motherboard;
-    var $os;
-    var $manufacturer;
+    public $cpu;
+    public $ram;
+    public $memory;
+    public $motherboard;
+    public $os;
+    private $manufacturer;
 
-    function information() {
-      return $this->cpu.", ".$this->ram.", ".$this->memory.", ".$this->motherboard.", ".$this->os.", ".$this->manufacturer;
+    public function information() {
+      return $this->cpu.", ".$this->ram.", ".$this->memory.", ".$this->motherboard.", ".$this->os.", ".$this->getManufacturer();
+    }
+
+    public function setManufacturer($value) {
+      $this->manufacturer = $value;
+    }
+
+    public function getManufacturer() {
+      return $this->manufacturer;
     }
   }
 
   class windows extends computer {
-    var $os = 'Windows 11';
-    var $manufacturer = 'Dell';
+    public $os = 'Windows 11';
   }
 
   class linux extends computer {
-    var $os = 'ubuntu 22.04';
-    var $manufacturer = 'Framework';
+    public $os = 'ubuntu 22.04';
   }
 
   class mac extends computer {
-    var $os = 'macOS 14(Sonoma)';
-    var $manufacturer = 'apple';
+    public $os = 'macOS 14(Sonoma)';
   }
 
   $pc = new computer;
@@ -33,19 +38,21 @@
   $pc->memory = '128 gb ssd';
   $pc->motherboard = 'black';
   $pc->os = 'google os';
-  $pc->manufacturer = 'google';
+  $pc->setManufacturer('google');
 
   $pw = new windows;
   $pw->cpu = 'intel 19 15000';
   $pw->ram = '32gb ddr5';
   $pw->memory = '128 gb ssd';
   $pw->motherboard = 'blue';
+  $pw->setManufacturer('dell');
 
   $pa = new mac;
   $pa->cpu = 'powerPC 7xx';
   $pa->ram = '16bg ddr4';
   $pa->memory = '128gb hdd';
   $pa->motherboard = 'white';
+  $pa->setManufacturer('apple');
 
   echo $pc->information()."<br>";
   echo $pw->information()."<br>";
