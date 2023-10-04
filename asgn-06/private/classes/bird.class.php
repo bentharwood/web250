@@ -6,6 +6,14 @@ class Bird {
 Use the wnc-birds.csv file to create the properties
 Make all of the properties public.
 */
+public $commonName;
+public $habitat;
+public $food;
+public $nestPlacement;
+public $behavior;
+private $conservationId;
+public $backyardTips;
+
 
 
  
@@ -19,6 +27,13 @@ Make all of the properties public.
   4 = Extinct
   */
 
+  public const CONSERVATION_OPTIONS = [
+    1 => 'Low concern',
+    2 => 'Moderate concern',
+    3 => 'Extreme concern',
+    4 => 'Extinct'
+  ];
+
  
 
  /*
@@ -26,6 +41,16 @@ Make all of the properties public.
    - Use the Null coalescing operator
    - Create a default value of 1 for conservation_id
  */
+
+ public function __construct($args=[]) {
+  $this->commonName = $args['commonName'] ?? '';
+  $this->habitat = $args['habitat'] ?? '';
+  $this->food = $args['food'] ?? '';
+  $this->nestPlacement = $args['nestPlacement'] ?? '';
+  $this->behavior = $args['behavior'] ?? '';
+  $this->conservationId = $args['conservationId'] ?? 1;
+  $this->backyardTips = $args['backyardTips'] ?? '';
+ }
 
 
 
@@ -36,6 +61,13 @@ Make all of the properties public.
 
 */
 
+public function conservation() {
+  if($this->conservationId > 0) {
+    return self::CONSERVATION_OPTIONS[$this->conservationId];
+  }else {
+    return "unknown";
+  }
+}
 
 }
 
