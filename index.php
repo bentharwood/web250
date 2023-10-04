@@ -13,10 +13,6 @@
     <li><a href="asgn-00a\event.php">Event</a></li>
     <li><a href="asgn-00a\fizz-buzz.php">Fizz-buzz</a></li>
     <li><a href="asgn-00a\flip.php">Flip</a></li>
-
-    <li><a href="asgn-04\constructor.php">asgn-04</a></li>
-    <li><a href="asgn-04\constructor-arguments.php">asgn-04-arguments</a></li>
-    <li><a href="asgn-04\autoload.php">autoload</a></li>
   </ul>
   <h2>asgn-01</h2>
   <ul>
