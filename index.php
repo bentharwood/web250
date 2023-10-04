@@ -32,6 +32,10 @@
     <li><a href="asgn-04\constructor-arguments.php">asgn-04-arguments</a></li>
     <li><a href="asgn-04\autoload.php">autoload</a></li>
   </ul>
+  <h2>asgn-05</h2>
+  <ul>
+    <li><a href="asgn-05\public\index.php">asgn-05</a></li>
+  </ul>
 </body>
 
 </html>
