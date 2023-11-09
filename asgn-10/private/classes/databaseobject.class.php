@@ -69,7 +69,7 @@ class DatabaseObject {
     if(!empty($this->errors)) { return false; }
 
     $attributes = $this->sanitized_attributes();
-    $sql = "INSERT INTO " . static::$table_name . " (";
+    $sql = "insert into " . static::$table_name . " (";
     $sql .= join(', ', array_keys($attributes));
     $sql .= ") VALUES ('";
     $sql .= join("', '", array_values($attributes));
@@ -135,7 +135,7 @@ class DatabaseObject {
   }
 
   public function delete() {
-    $sql = "DELETE FROM " . static::$table_name . " ";
+    $sql = "delete from " . static::$table_name . " ";
     $sql .= "WHERE id='" . self::$database->escape_string($this->id) . "' ";
     $sql .= "LIMIT 1";
     $result = self::$database->query($sql);

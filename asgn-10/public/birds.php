@@ -7,8 +7,7 @@
 <h2>Bird inventory</h2>
 <p>This is a short list -- start your birding!</p>
 
-// Create a link to Add a Bird
-<a href="new.php"></a>
+<a href="new.php">Create a new bird entry</a>
 
     <table border="1">
       <tr>
@@ -23,6 +22,7 @@
 <?php
 
 // Create a new bird object that uses the find_all() method
+$birds = Bird::find_all();
 
 
 
@@ -30,11 +30,11 @@
 
   ?>
       <tr>
-        <td><?php echo h($bird->commonName); ?></td>
+        <td><?php echo h($bird->common_name); ?></td>
         <td><?php echo h($bird->habitat); ?></td>
         <td><?php echo h($bird->food); ?></td>
         <td><?php echo h($bird->conservation()); ?></td>
-        <td><?php echo h($bird->backyardTips); ?></td>
+        <td><?php echo h($bird->backyard_tips); ?></td>
         <td><a href="detail.php?id=<?php echo $bird->id; ?>">View</a></td>
         <td><a href="edit.php?id=<?php echo $bird->id; ?>">Edit</a></td>
         <td><a href="<?php echo url_for('delete.php?id=' . h(u($bird->id))); ?>">Delete</a></td>
