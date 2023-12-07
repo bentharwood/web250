@@ -5,46 +5,32 @@ $errors = [];
 $username = '';
 $password = '';
 
-$recaptcha_secret = '6LfvCykpAAAAAJ3HW56oH82Gq80qDCi2vdhk1hRn'; // Your reCAPTCHA Secret Key
-$response = $_POST['g-recaptcha-response'];
+if (is_post_request()) {
 
-$verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptcha_secret}&response={$response}");
-$captcha_success = json_decode($verify);
+  $username = $_POST['username'] ?? '';
+  $password = $_POST['password'] ?? '';
 
-if ($captcha_success->success) {
-  // Captcha verification successful
-  // Process your form submission logic here
-  // Example: Send email, save to database, etc.
-  if (is_post_request()) {
+  // Validations
+  if (is_blank($username)) {
+    $errors[] = "Username cannot be blank.";
+  }
+  if (is_blank($password)) {
+    $errors[] = "Password cannot be blank.";
+  }
 
-    $username = $_POST['username'] ?? '';
-    $password = $_POST['password'] ?? '';
-
-    // Validations
-    if (is_blank($username)) {
-      $errors[] = "Username cannot be blank.";
-    }
-    if (is_blank($password)) {
-      $errors[] = "Password cannot be blank.";
-    }
-
-    // if there were no errors, try to login
-    if (empty($errors)) {
-      $user = users::find_by_username($username);
-      // test if user found and password is correct
-      if ($user != false && $user->verify_password($password)) {
-        // Mark user as logged in
-        $session->login($user);
-        redirect_to(url_for('/members/index.php'));
-      } else {
-        // username not found or password does not match
-        $errors[] = "Log in was unsuccessful.";
-      }
+  // if there were no errors, try to login
+  if (empty($errors)) {
+    $user = users::find_by_username($username);
+    // test if user found and password is correct
+    if ($user != false && $user->verify_password($password)) {
+      // Mark user as logged in
+      $session->login($user);
+      redirect_to(url_for('/members/index.php'));
+    } else {
+      // username not found or password does not match
+      $errors[] = "Log in was unsuccessful.";
     }
   }
-} else {
-  // Captcha verification failed
-  echo "Failed! Please complete the reCAPTCHA.";
 }
 
 ?>
@@ -62,8 +48,8 @@ if ($captcha_success->success) {
     <input type="text" name="username" value="<?php echo h($username); ?>" /><br />
     Password:<br />
     <input type="password" name="password" value="" /><br />
-    <div class="g-recaptcha" data-sitekey="6LfvCykpAAAAAFPLxvZzTJkk-jp3FRmY9s1GLwsh"></div>
-    <input type="submit" name="submit" value="Submit" />
+    <div class="g-recaptcha" data-sitekey="6LfvCykpAAAAAFPLxvZzTJkk-jp3FRmY9s1GLwsh">
+      <input type="submit" name="submit" value="Submit" />
   </form>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </div>
