@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Buon Cibo about</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <div id="about" role="main">
+      <header role="banner">
+        <label for="nav"><img id="menu-clickable" src="imgs/menu.svg" alt="Three black lines."></label>
+        <input type="checkbox" name="nav" id="nav">
+        <nav role="navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+        <img src="imgs/logo.png" width="500" height="500" alt="A yellow logo saying Buon Cibo with a spatula, whisk, and rolling pin ing the center.">
+      </header>
+      <main role="main">
+        <section role="region">
+          <h1>About us</h1>
+          <p>Welcome to Buon Cibo, a cherished culinary gem born from the rich heritage of Italian immigrants who brought the soul of Italy to the heart of Asheville in the 1950s. Our story is woven with generations of tradition and a dedication to authenticity, echoing the flavors and warmth of Italian kitchens. With roots firmly planted in the old-world recipes passed down through our family, Buon Cibo is a testament to the enduring passion for Italian cuisine. From the bustling streets of Italy to the vibrant tables of Asheville, our restaurant stands as a testament to the timeless traditions and the enduring love for sharing exquisite flavors and heartfelt hospitality with our community.</p>
+        </section>
+        <section role="region">
+          <address>
+            123 Tuscany Lane Asheville, NC 28801<br>
+            <a href="tel:828-123-4567">(828) 123 4567</a><br>
+            <a href="mailto:info@buonciboasheville.com">contact@buonciboasheville.com</a>
+          </address>
+        </section>
+        <section role="region">
+          <p>reservations available Mon - Thur 9am - 9pm</p>
+          <form action="#">
+            <label for="reservations">Reservations</label><br>
+            <select id="reservations" name="reservations">
+              <option value="" disabled selected>Select date and time:</option>
+              <option value="today">Today</option>
+              <option value="tomorrow">Tomorrow</option>
+              <option value="dayAfterTomorrow">The Day After Tomorrow</option>
+            </select><br>
+            <label for="attendees">Attendees:</label>
+            <input type="number" id="attendees" name="attendees" placeholder="1" min="1">
+            <input type="submit" value="Reserve">
+          </form>
+        </section>
+      </main>
+    </div>
+  </body>
+
+</html>
