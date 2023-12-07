@@ -32,7 +32,6 @@ if (is_post_request()) {
     }
   }
 }
-
 ?>
 
 <?php $page_title = 'Log in'; ?>
@@ -48,10 +47,8 @@ if (is_post_request()) {
     <input type="text" name="username" value="<?php echo h($username); ?>" /><br />
     Password:<br />
     <input type="password" name="password" value="" /><br />
-    <div class="g-recaptcha" data-sitekey="6LfvCykpAAAAAFPLxvZzTJkk-jp3FRmY9s1GLwsh">
       <input type="submit" name="submit" value="Submit" />
   </form>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </div>
 
 <?php include(SHARED_PATH . '/public_footer.php'); ?>

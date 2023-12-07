@@ -37,6 +37,10 @@ $user = users::find_by_id($id);
         <dt>Username</dt>
         <dd><?php echo h($user->username); ?></dd>
       </dl>
+      <dl>
+        <dt>user level</dt>
+        <dd><?php echo h($user->user_level); ?></dd>
+      </dl>
     </div>
 
   </div>

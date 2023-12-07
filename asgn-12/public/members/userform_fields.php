@@ -25,6 +25,12 @@ if (!isset($user)) {
 </dl>
 
 <dl>
+  <dt>user level</dt>
+  <dd><input type="number" name="user[user_level]" value="<?php echo h($user->level); ?>" min='1' max='2'/></dd>
+</dl>
+
+
+<dl>
   <dt>Password</dt>
   <dd><input type="password" name="user[password]" value="" /></dd>
 </dl>
