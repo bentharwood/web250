@@ -1,3 +1,9 @@
+<!-- <?php 
+  // define("DB_SERVER","localhost");
+  // define("DB_USER", "uxyjjijsjfdpj");
+  // define("DB_PASS", "@6[q1@m11#ny");
+  // define("DB_NAME", "dbp6k21q6lytob");
+?> -->
 <?php
 
 // Keep database credentials in a separate file
